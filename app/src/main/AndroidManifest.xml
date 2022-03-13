@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.suitmedia.reqres_v2">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.suitmedia.reqres_v2.MainActivity"
+        android:allowBackup="true"
+        android:icon="@drawable/img_suitmedia"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/img_suitmedia"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Reqres">
+        <activity android:name="com.suitmedia.reqres_v2.view.home.HomeActivity"
+            android:theme="@style/Theme.Reqres">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.suitmedia.reqres_v2.view.user.UserActivity"/>
+        <activity android:name="com.suitmedia.reqres_v2.view.event.EventActivity"/>
+        <activity android:name="com.suitmedia.reqres_v2.view.guest.GuestActivity"/>
+    </application>
+
+</manifest>

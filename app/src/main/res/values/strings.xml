@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Suitmedia</string>
+    <string name="welcome">Welcome</string>
+    <string name="app_desc">This is app for Suitmedia mobile developer test</string>
+    <string name="copyright">Copyright 2022 Suitmedia All rights reserved.</string>
+    <string name="hint_name">Type name here…</string>
+    <string name="next">Next</string>
+    <string name="user_name">User Name</string>
+    <string name="hello">Hallo,</string>
+    <string name="choose_event">Choose Event</string>
+    <string name="choose_guest">Choose Guest</string>
+    <string name="event_name">Event name</string>
+    <string name="event_desc">Event description</string>
+    <string name="event_date">Apr 3, 2020</string>
+    <string name="event">Events</string>
+    <string name="guest">Guests</string>
+    <string name="guest_name">Guest Name</string>
+    <string name="press_back_to_exit">Press back to exit</string>
+</resources>
