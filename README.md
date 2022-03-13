@@ -1,4 +1,4 @@
-# Suitmedia Adnroid Developer Phase 1 Test
+# Suitmedia Adnroid Developer Phase 2 Test
 
 SCREENSHOOTS
 

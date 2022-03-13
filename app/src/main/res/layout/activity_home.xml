@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/llHome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
         android:orientation="vertical"
         android:layout_marginStart="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_30sdp"
-        android:padding="@dimen/_30sdp"
+        android:padding="@dimen/_20sdp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/tvAppDesc"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,13 +73,13 @@
         android:background="@drawable/bg_snow_round">
 
         <ImageView
+            android:id="@+id/ivAvatar"
             android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_110sdp"
             app:srcCompat="@drawable/img_avatar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/llHome"
             tools:layout_editor_absoluteY="17dp" />
 
         <EditText
@@ -87,7 +87,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20ssp"
-            android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/bg_edit_text"
             android:ems="10"
             android:gravity="center"
@@ -96,20 +95,58 @@
             android:textColor="@color/dim_black"
             android:importantForAutofill="no"
             android:padding="@dimen/_10sdp"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAvatar"/>
+
+        <EditText
+            android:id="@+id/etInputPalindrome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/hint_palindrome"
+            android:textColorHint="@color/dim_gray"
+            android:textColor="@color/dim_black"
+            android:importantForAutofill="no"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInputName"/>
 
         <Button
             android:id="@+id/btNext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
             style="@style/btnNext"
             android:text="@string/next"
             android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btCkPalindrome"
+            app:layout_constraintTop_toBottomOf="@+id/etInputPalindrome"/>
+
+        <Button
+            android:id="@+id/btCkPalindrome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            style="@style/btnNext"
+            android:text="@string/check"
+            android:textAllCaps="false"
             android:paddingStart="@dimen/_30sdp"
             android:paddingEnd="@dimen/_30sdp"
-            android:layout_marginBottom="@dimen/_20sdp"/>
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInputPalindrome"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvCopyRight"
