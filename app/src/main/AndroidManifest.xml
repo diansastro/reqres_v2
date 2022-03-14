@@ -24,6 +24,11 @@
         <activity android:name="com.suitmedia.reqres_v2.view.user.UserActivity"/>
         <activity android:name="com.suitmedia.reqres_v2.view.event.EventActivity"/>
         <activity android:name="com.suitmedia.reqres_v2.view.guest.GuestActivity"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDk71CNrsmZVztcsHGiTkXCyNXxBd1-WVo" />
+
     </application>
 
 </manifest>

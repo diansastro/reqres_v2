@@ -40,10 +40,10 @@ open class EventListFragment: BaseMvpFragment<EventListPresenter>(), EventListCo
     override fun getLayout(): Int = R.layout.fragment_event_list
 
     private fun initView() {
-        eventData.add(EventData(1, "Dummy Event 1", "2 April, 2022", ""))
-        eventData.add(EventData(2, "Dummy Event 2", "4 May, 2022", ""))
-        eventData.add(EventData(3, "Dummy Event 3", "20 June, 2022", ""))
-        eventData.add(EventData(4, "Dummy Event 4", "28 August, 2022", ""))
+        eventData.add(EventData(1, "Dummy Event 1", "2 April, 2022", "", 0.0, 0.0))
+        eventData.add(EventData(2, "Dummy Event 2", "4 May, 2022", "", 0.0, 0.0))
+        eventData.add(EventData(3, "Dummy Event 3", "20 June, 2022", "", 0.0, 0.0))
+        eventData.add(EventData(4, "Dummy Event 4", "28 August, 2022", "", 0.0, 0.0))
 
         eventAdapter = EventAdapter(eventData)
         eventAdapter.apply {
