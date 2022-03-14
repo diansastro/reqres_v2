@@ -1,6 +1,7 @@
 package com.suitmedia.reqres_v2.di.builder
 
 import com.suitmedia.reqres_v2.view.event.EventActivity
+import com.suitmedia.reqres_v2.view.event.EventProvider
 import com.suitmedia.reqres_v2.view.guest.GuestActivity
 import com.suitmedia.reqres_v2.view.home.HomeActivity
 import com.suitmedia.reqres_v2.view.user.UserActivity
@@ -16,7 +17,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector
     abstract fun bindUserActivity(): UserActivity
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [EventProvider::class])
     abstract fun bindEventActivity(): EventActivity
 
     @ContributesAndroidInjector
