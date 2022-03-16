@@ -54,6 +54,7 @@ open class EventMapFragment: BaseMvpFragment<EventMapPresenter>(), EventMapContr
 
             it.mapType = GoogleMap.MAP_TYPE_NORMAL
             it.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 5000, null)
+            it.setOnMarkerClickListener { true }
 
             eventData.add(EventData(1, "Dummy Event 1", "2 April, 2022", "", -6.956194, 107.554126))
             eventData.add(EventData(2, "Dummy Event 2", "4 May, 2022", "", -6.949736, 107.562543))
@@ -67,8 +68,9 @@ open class EventMapFragment: BaseMvpFragment<EventMapPresenter>(), EventMapContr
             eventAdapter.apply {
                 setOnItemClickListener { adapter, view, position ->
                     index = position
-                    if (index == position) it.addMarker(MarkerOptions().position(LatLng(eventData[position].lat!!, eventData[position].log!!)).title(eventData[position].eventName!!).icon(icoActive))
-                    else it.addMarker(MarkerOptions().position(LatLng(eventData[position].lat!!, eventData[position].log!!)).title(eventData[position].eventName!!).icon(icoActive))
+                    for (index in 0..data.size ) {
+                        if (index == position) it.addMarker(MarkerOptions().position(LatLng(eventData[position].lat!!, eventData[position].log!!)).title(eventData[position].eventName!!).icon(icoActive))
+                    }
                 }
                 notifyDataSetChanged()
             }
