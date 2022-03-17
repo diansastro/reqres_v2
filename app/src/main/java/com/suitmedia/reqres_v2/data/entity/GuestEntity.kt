@@ -11,5 +11,5 @@ import javax.inject.Inject
 class GuestEntity @Inject constructor(context: Context): BasicAbstractNetwork<GuestApi>(context) {
     override fun getApi(): Class<GuestApi> = GuestApi::class.java
 
-    fun getGuestList(): Observable<Response<GuestResponse>> = networkService().getGuestList()
+    fun getGuestListPaging(page: Int): Observable<Response<GuestResponse>> = networkService().getGuestListPaging(page)
 }

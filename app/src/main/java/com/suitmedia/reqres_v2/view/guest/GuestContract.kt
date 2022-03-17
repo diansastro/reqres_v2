@@ -5,10 +5,10 @@ import com.suitmedia.reqres_v2.data.response.GuestResponse
 
 interface GuestContract {
     interface View: ErrorView {
-        fun getGuestList(guestResponse: GuestResponse?)
+        fun getGuestListPaging(guestResponse: GuestResponse?)
     }
 
     interface Presenter {
-        fun execGuestList()
+        fun execGuestListPaging(page: Int)
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.jaeger.library.StatusBarUtil
 import com.suitmedia.reqres_v2.R
 import com.suitmedia.reqres_v2.base.BaseMvpActivity
@@ -27,6 +28,8 @@ open class GuestActivity: BaseMvpActivity<GuestPresenter>(), GuestContract.View 
 
     private var guestData = arrayListOf<GuestData>()
     private lateinit var guestAdapter: GuestAdapter
+    private var currentPage = 1
+    private var totalAvailablePages = 0
 
     override fun initPresenterView() {
         presenter.view = this
@@ -42,13 +45,15 @@ open class GuestActivity: BaseMvpActivity<GuestPresenter>(), GuestContract.View 
         StatusBarUtil.setLightMode(this)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         initAction()
-        presenter.execGuestList()
+        initVIew()
+        initScroll()
     }
 
     override fun getLayout(): Int = R.layout.activity_guest
 
-    override fun getGuestList(guestResponse: GuestResponse?) {
+    override fun getGuestListPaging(guestResponse: GuestResponse?) {
         guestData.addAll(guestResponse?.data!!)
+        totalAvailablePages = guestResponse.total_pages!!
 
         guestAdapter = GuestAdapter(guestData)
         guestAdapter.apply {
@@ -78,6 +83,24 @@ open class GuestActivity: BaseMvpActivity<GuestPresenter>(), GuestContract.View 
             isNestedScrollingEnabled = false
         }
         dismissLoading()
+    }
+
+    private fun initVIew() {
+        if (currentPage == 1 ) presenter.execGuestListPaging(currentPage)
+    }
+
+    private fun initScroll() {
+        rvGuestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!rvGuestList.canScrollVertically(1)) {
+                    if (currentPage <= totalAvailablePages) {
+                        currentPage += 1
+                        presenter.execGuestListPaging(currentPage)
+                    }
+                }
+            }
+        })
     }
 
     private fun initAction() {
