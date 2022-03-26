@@ -46,4 +46,8 @@
         <item name="android:backgroundDimAmount">0</item>
     </style>
 
+    <style name="progress" parent="">
+        <item name="colorAccent">@color/orange</item>
+    </style>
+
 </resources>

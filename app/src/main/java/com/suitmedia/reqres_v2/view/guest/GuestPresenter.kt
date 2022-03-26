@@ -19,4 +19,19 @@ class GuestPresenter @Inject constructor(val guestEntity: GuestEntity): BasePres
            view?.errorScreen(it.localizedMessage)
         }, {}))
     }
+
+    override fun execOfflineGuest() {
+        addSubscription(guestEntity.execOfflineGuest({
+            when(it.code()) {
+                NetworkCode.CODE_OK -> {
+                    view?.onSuccessOfflineLoad()
+                }
+                else -> {
+                    view?.errorScreen("Unable to Load Offline Data")
+                }
+            }
+        }, {
+           view?.errorScreen(it.localizedMessage)
+        }, {}))
+    }
 }

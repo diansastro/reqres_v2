@@ -9,6 +9,9 @@ import retrofit2.http.Query
 interface GuestApi {
 
     @GET("users")
+    fun getGuestList(): Observable<Response<GuestResponse>>
+
+    @GET("users")
     fun getGuestListPaging(
         @Query("page") page: Int): Observable<Response<GuestResponse>>
 }
