@@ -24,7 +24,6 @@ open class MainActivity : MultiDexApplication(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         initInjection()
-        initInjection()
     }
 
     fun initInjection(){
