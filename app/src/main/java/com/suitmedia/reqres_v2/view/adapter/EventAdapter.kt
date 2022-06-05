@@ -18,6 +18,7 @@ class EventAdapter(var list: List<EventData>): BaseQuickAdapter<EventData, BaseV
 
                 h.itemView.tvEventName.text = i.eventName
                 h.itemView.tvEventDate.text = i.eventDate
+                h.itemView.tvEventTime.text = i.eventTime
             }
         }
     }

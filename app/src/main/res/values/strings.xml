@@ -14,6 +14,7 @@
     <string name="event_name">Event name</string>
     <string name="event_desc">Event description</string>
     <string name="event_date">Apr 3, 2020</string>
+    <string name="event_time">10.00 AM</string>
     <string name="event">Events</string>
     <string name="guest">Guests</string>
     <string name="guest_name">Guest Name</string>

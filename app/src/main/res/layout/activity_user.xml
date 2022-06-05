@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/tvHello"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
@@ -27,8 +27,20 @@
         android:text="@string/hello"
         android:gravity="start"
         android:textSize="@dimen/_16ssp"
+        android:textStyle="bold"
+        android:textColor="@color/dim_black2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivLine"/>
+
+    <ImageView
+        android:id="@+id/ivLine"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        app:srcCompat="@drawable/line"
+        android:scaleType="fitEnd"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
@@ -44,7 +56,7 @@
         android:textStyle="bold"
         android:textSize="@dimen/_18ssp"
         android:textColor="@color/orange"
-        app:layout_constraintTop_toBottomOf="@+id/tvHello"
+        app:layout_constraintTop_toBottomOf="@+id/ivLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -12,7 +12,7 @@
         android:id="@+id/rlTop"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/bg_bright"
+        android:background="@color/orange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHeight_percent="0.35"
-        android:background="@color/transparent_orange" />
+        android:background="@drawable/bg_bright" />
 
     <TextView
         android:id="@+id/tvWelcome"

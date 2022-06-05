@@ -56,10 +56,10 @@ open class EventMapFragment: BaseMvpFragment<EventMapPresenter>(), EventMapContr
             it.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 5000, null)
             it.setOnMarkerClickListener { true }
 
-            eventData.add(EventData(1, "Dummy Event 1", "2 April, 2022", "", -6.956194, 107.554126))
-            eventData.add(EventData(2, "Dummy Event 2", "4 May, 2022", "", -6.949736, 107.562543))
-            eventData.add(EventData(3, "Dummy Event 3", "20 June, 2022", "", -6.935144, 107.601300))
-            eventData.add(EventData(4, "Dummy Event 4", "28 August, 2022", "", -6.936788, 107.611300))
+            eventData.add(EventData(1, "Dummy Event 1", "2 April, 2022", "9.00 AM",null,-6.956194, 107.554126))
+            eventData.add(EventData(2, "Dummy Event 2", "4 May, 2022", "10.20 AM",null,-6.949736, 107.562543))
+            eventData.add(EventData(3, "Dummy Event 3", "20 June, 2022", "14.30 PM", null, -6.935144, 107.601300))
+            eventData.add(EventData(4, "Dummy Event 4", "28 August, 2022", "17.00 PM", null, -6.936788, 107.611300))
 
             eventData.forEach { i ->
                 it.addMarker(MarkerOptions().position(LatLng(i.lat!!, i.log!!)).title(i.eventName!!).icon(icoInActive))

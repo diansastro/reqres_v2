@@ -19,6 +19,7 @@
             android:id="@+id/ivEventMedia"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_80sdp"
+            android:padding="@dimen/_10sdp"
             app:srcCompat="@drawable/event_group"
             android:scaleType="centerCrop" />
 
@@ -27,7 +28,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_toEndOf="@id/ivEventMedia"
             android:ellipsize="end"
@@ -43,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEventName"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:text="@string/event_desc"
             android:maxLines="2"
@@ -53,15 +52,25 @@
 
         <TextView
             android:id="@+id/tvEventDate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_below="@+id/tvEventDesc"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:layout_toEndOf="@id/ivEventMedia"
-            android:gravity="end"
+            android:gravity="start"
             android:text="@string/event_date"
+            android:textSize="@dimen/_9ssp" />
+
+        <TextView
+            android:id="@+id/tvEventTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_below="@+id/tvEventDesc"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toEndOf="@id/tvEventDate"
+            android:text="@string/event_time"
             android:textSize="@dimen/_9ssp" />
 
     </RelativeLayout>
